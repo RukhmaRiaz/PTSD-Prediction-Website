@@ -10,12 +10,7 @@ urlpatterns = [
     path("patient",views.patient,name='patient'),
     path("doctor",views.doctor,name='doctor'),
     path("receptionist",views.receptionist,name='receptionist'),
-    path("admin",views.admin,name='admin')
-
-
-
-
-
-
+    path("admin",views.admin,name='admin'),
+    path("signup",views.signup,name='signup')
 
 ]

@@ -4,6 +4,34 @@
 
 {% block body %}
 
+<div class="container-fluid px-0 mb-10">
+    <img src="/static/img/t2.jpg" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class="container mb-3 ">
+    <h1 class="my-4 text-center"> Feel Free to Contact Us</h1>
+<form method="post" action="/contact">
+{% csrf_token %}
+    <div class="mb-4">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+      </div>
+      <div class="mb-4">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+      </div>
+      <div class="mb-4">
+        <label for="phone" class="form-label">Phone#</label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone#">
+      </div>
+      <div class="mb-4">
+        <label for="query" class="form-label">Query for Contacting</label>
+        <textarea class="form-control" id="query" name="query"rows="3"></textarea>
+      </div>
+      <div class="d-md-flex justify-content-md-center">
+        <button class="btn btn-primary" type="submit" style="height:50px;width:200px">Submit</button>
+      </div>    
+</form>
 
+</div>
 {% endblock %}
 
