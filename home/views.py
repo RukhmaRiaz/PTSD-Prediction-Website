@@ -1,13 +1,43 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Contact
+from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+from django.contrib.auth import logout, login
 from home.models import Receptionist
 from home.models import Patient
 from home.models import Doctor
 from home.models import Signup
+from home.models import Login
+
+def indexlogin(request):
+    print(request.user)
+    if request.user.is_anonymous:
+        return redirect("/login")
+    return render(request, 'indexlogin.html')
+
+def loginUser(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        print(username , email,  password)
+
+        #check if user has entered correct credentials
+        user = authenticate(username= username , email = email,  password= password)
+        if user is not None:
+            login(request, user)
+            return render(request, 'index.html')
+    # A backend authenticated the credentials
+        else:
+             return render(request, 'login.html')
+    # No backend authenticated the credentials
+
+    
+    return render(request, 'login.html')
 
 
-from django.contrib import messages
 # Create your views here.
 def index(request):
     context={
@@ -88,3 +118,7 @@ def signup(request):
         signup.save()
         messages.success(request, 'Signup Successfully!')
     return render(request,'signup.html','patient.html')
+
+def logout(request):
+    logout(request)
+    return redirect("/login")

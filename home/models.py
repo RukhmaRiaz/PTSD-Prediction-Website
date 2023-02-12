@@ -9,6 +9,16 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Login(models.Model):
+    name=models.CharField(max_length=122)
+    email=models.CharField(max_length=122)
+    password=models.CharField(max_length=20)
+    date=models.DateField()
+    
+    def __str__(self):
+      return self.name
+
 
 class Receptionist(models.Model):
     uname=models.CharField(max_length=122)
