@@ -10,6 +10,7 @@ from home.models import Patient
 from home.models import Doctor
 from home.models import Signup
 from home.models import Login
+from home.models import Questionaries
 
 def indexlogin(request):
     print(request.user)
@@ -122,3 +123,5 @@ def signup(request):
 def logout(request):
     logout(request)
     return redirect("/login")
+def questionaries(request):
+    return render(request, 'questionaries.html')

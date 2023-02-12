@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{%block title%} Questionaries {% endblock title%}
+
+{% block body %}
+<div class="container mb-3 ">
+    <h1 class="my-4 text-center"> PTSD Prediction Questionaries</h1>
+<div class="container mb-3">
+<select class="form-select" aria-label="Default select example">
+    <option selected>Had nightmares about the events or thought about the event when you didnot want to?</option>
+    <option value="1">Not at all</option>
+    <option value="2">Moderately</option>
+    <option value="3">Extremely</option>
+  </select>
+</div>
+<div class="container mb-3">
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Repeated, disturbing memories, thoughts, or images of stressful experience?</option>
+    <option value="1">Not at all</option>
+    <option value="2">Moderately</option>
+    <option value="3">Extremely</option>
+  </select>
+</div>
+<div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Having physical reactions (e.g., heart pounding, trouble breathing , sweating) when something reminded you of a stressful experience?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+</div>
+{% endblock body %}
