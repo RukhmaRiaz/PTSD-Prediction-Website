@@ -10,7 +10,6 @@ from home.models import Patient
 from home.models import Doctor
 from home.models import Signup
 from home.models import Login
-from home.models import Questionaries
 
 # Create your views here.
 def index(request):
@@ -126,11 +125,3 @@ def signup(request):
         messages.success(request, 'Signup Successfully!')
     return render(request,'signup.html','patient.html')
 
-<<<<<<< HEAD
-=======
-def logout(request):
-    logout(request)
-    return redirect("/login")
-def questionaries(request):
-    return render(request, 'questionaries.html')
->>>>>>> b3ccc898c52b5f71e1bce26805abb335c67460fc
