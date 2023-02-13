@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{%block title%} Questionaries {% endblock title%}
+
+{% block body %}
+<div class="container mb-3 ">
+    <h1 class="my-4 text-center"> PTSD Prediction Questionaries</h1>
+<div class="container mb-3">
+<select class="form-select" aria-label="Default select example">
+    <option selected>Had nightmares about the events or thought about the event when you didnot want to?</option>
+    <option value="1">Not at all</option>
+    <option value="2">Moderately</option>
+    <option value="3">Extremely</option>
+  </select>
+</div>
+<div class="container mb-3">
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Repeated, disturbing memories, thoughts, or images of stressful experience?</option>
+    <option value="1">Not at all</option>
+    <option value="2">Moderately</option>
+    <option value="3">Extremely</option>
+  </select>
+</div>
+<div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Having physical reactions (e.g., heart pounding, trouble breathing , sweating) when something reminded you of a stressful experience?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+  <div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Felt numb or detached from people, activities, or your surroundings?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+  <div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+  <div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Having strong negative feelings such as fear, horror, anger, guilt, or shame?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+  <div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Loss of interest in activities that you used to enjoy?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+  <div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Trouble experiencing positive feelings (for example, being unable to have loving feelings for those close to you)?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+  <div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Feeling angry, irritable or having aggressive outbursts?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+  <div class="container mb-3">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Taking too many risks or doing things that could cause you harm?</option>
+      <option value="1">Not at all</option>
+      <option value="2">Moderately</option>
+      <option value="3">Extremely</option>
+    </select>
+  </div>
+  <div class="d-md-flex justify-content-md-center">
+    <button class="btn btn-primary" type="submit" style="height:50px;width:200px">Submit</button>
+  </div>
+</div>
+{% endblock body %}
