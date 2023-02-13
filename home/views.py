@@ -10,34 +10,6 @@ from home.models import Patient
 from home.models import Doctor
 from home.models import Signup
 from home.models import Login
-from home.models import Questionaries
-
-def indexlogin(request):
-    print(request.user)
-    if request.user.is_anonymous:
-        return redirect("/login")
-    return render(request, 'indexlogin.html')
-
-def loginUser(request):
-    if request.method == "POST":
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        print(username , email,  password)
-
-        #check if user has entered correct credentials
-        user = authenticate(username= username , email = email,  password= password)
-        if user is not None:
-            login(request, user)
-            return render(request, 'index.html')
-    # A backend authenticated the credentials
-        else:
-             return render(request, 'login.html')
-    # No backend authenticated the credentials
-
-    
-    return render(request, 'login.html')
-
 
 # Create your views here.
 def index(request):
@@ -48,6 +20,37 @@ def index(request):
     #messages.success(request,"Query Sent Successfully")
     return render(request, 'index.html', context)
    # return HttpResponse( "this is homepage" )
+
+
+def SignupPage(request):
+    if request.method=='POST':
+        uname=request.POST.get('username')
+        email=request.POST.get('email')
+        pass1=request.POST.get('password1')
+        pass2=request.POST.get('password2')
+
+        if pass1!=pass2:
+            return HttpResponse("Your password and confirm password doesn't match!")
+        else:
+            my_user=User.objects.create_user(uname,email,pass1)
+            my_user.save()
+            return render(request, 'login.html')
+        
+          
+    return render (request,'signupl.html')
+
+def LoginPage(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        pass1=request.POST.get('pass')
+        user=authenticate(request,username=username,password=pass1)
+        if user is not None:
+            login(request,user)
+            return render (request,'index.html')
+        else:
+            return HttpResponse("Username or Password is incorrect!")
+
+    return render (request,'login.html')
 
 def about(request):
     return render(request, 'about.html')
@@ -109,6 +112,8 @@ def receptionist(request):
     return render(request, 'receptionist.html')
     #return HttpResponse( "this is receptionist page" )
 
+
+
 def signup(request):
     if request.method=="POST":
         uname=request.POST.get('uname')
@@ -120,8 +125,3 @@ def signup(request):
         messages.success(request, 'Signup Successfully!')
     return render(request,'signup.html','patient.html')
 
-def logout(request):
-    logout(request)
-    return redirect("/login")
-def questionaries(request):
-    return render(request, 'questionaries.html')
