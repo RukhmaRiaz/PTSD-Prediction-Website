@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from home import views
+
 
 admin.site.site_header = "PTSD Predictor Admin"
 admin.site.site_title = "PTSD Admin Portal"
@@ -22,5 +24,7 @@ admin.site.index_title = "Welcome to our PTSD Detection System "
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('home.urls'))
-]
+    path('index/',include('home.urls')),
+    path('',views.SignupPage, name= 'signupl'),
+    path('login/',views.LoginPage, name= 'login')
+    ]
