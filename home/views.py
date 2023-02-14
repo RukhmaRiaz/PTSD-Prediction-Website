@@ -34,7 +34,7 @@ def SignupPage(request):
         else:
             my_user=User.objects.create_user(uname,email,pass1)
             my_user.save()
-            return render(request, 'login.html')
+            return redirect('login')
         
           
     return render (request,'signupl.html')
@@ -125,3 +125,5 @@ def signup(request):
         messages.success(request, 'Signup Successfully!')
     return render(request,'signup.html','patient.html')
 
+def questionaries(request):
+    return render(request, 'questionaries.html')
