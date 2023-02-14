@@ -18,23 +18,7 @@ def index(request):
     return render(request, 'index.html')
    # return HttpResponse( "this is homepage" )
 
-
-def SignupPage(request):
-    if request.method=='POST':
-        uname=request.POST.get('username')
-        email=request.POST.get('email')
-        pass1=request.POST.get('password1')
-        pass2=request.POST.get('password2')
-
-        if pass1!=pass2:
-            return HttpResponse("Your password and confirm password doesn't match!")
-        else:
-            my_user=User.objects.create_user(uname,email,pass1)
-            my_user.save()
-            return redirect('login')
-        
-          
-    return render (request,'signupl.html')
+    
 
 def LoginPage(request):
     if request.method=='POST':
@@ -43,7 +27,7 @@ def LoginPage(request):
         user=authenticate(request,username=username,password=pass1)
         if user is not None:
             login(request,user)
-            return render (request,'index.html')
+            return HttpResponse( "this is login page" )
         else:
             return HttpResponse("Username or Password is incorrect!")
 
@@ -70,13 +54,21 @@ def contact(request):
     #return HttpResponse( "this is contact page" )
 
 def patient(request):
-    if request.method=="POST":
-        uname=request.POST.get('uname')
-        password=request.POST.get('password')
-        patient=Patient(uname=uname,password=password,date=datetime.today())
-        patient.save()
-        messages.success(request, 'Login Successfully!')
-    return render(request, 'patient.html')
+    if request.method=='POST':
+        uname=request.POST.get('username')
+        email=request.POST.get('email')
+        pass1=request.POST.get('password1')
+        pass2=request.POST.get('password2')
+
+        if pass1!=pass2:
+            return HttpResponse("Your password and confirm password doesn't match!")
+        else:
+            my_user=User.objects.create_user(uname,email,pass1)
+            my_user.save()
+            return redirect('login')
+        
+          
+    return render (request,'patient.html')
     #return HttpResponse( "this is patient page" )
 
 def doctor(request):
@@ -109,18 +101,6 @@ def receptionist(request):
     return render(request, 'receptionist.html')
     #return HttpResponse( "this is receptionist page" )
 
-
-
-def signup(request):
-    if request.method=="POST":
-        uname=request.POST.get('uname')
-        email=request.POST.get('email')
-        password=request.POST.get('password')
-        rpassword=request.POST.get('rpassword')
-        signup=Signup(uname=uname,email=email,password=password,rpassword=rpassword,date=datetime.today())
-        signup.save()
-        messages.success(request, 'Signup Successfully!')
-    return render(request,'signup.html','patient.html')
 
 def questionaries(request):
     return render(request, 'questionaries.html')
