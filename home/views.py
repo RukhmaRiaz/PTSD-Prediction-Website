@@ -124,8 +124,3 @@ def signup(request):
 
 def questionaries(request):
     return render(request, 'questionaries.html')
-<<<<<<< HEAD
-=======
-  
-
->>>>>>> 3eba1bcac7946b1e8b2c390d67a26f79e0ff6e8b
