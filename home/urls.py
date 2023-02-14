@@ -14,7 +14,7 @@ urlpatterns = [
     path("receptionist",views.receptionist,name='receptionist'),
     path("admin",views.admin,name='admin'),
     path("signup",views.signup,name='signup'),
-    path("questionaries",views.questionaries,name='questionaries')
+    path("questionaries",views.questionaries,name='questionaries'),
 
     
 ]

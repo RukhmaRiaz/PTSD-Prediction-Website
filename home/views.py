@@ -10,15 +10,12 @@ from home.models import Patient
 from home.models import Doctor
 from home.models import Signup
 from home.models import Login
+from home.models import Questionaries
 
 # Create your views here.
 def index(request):
-    context={
-        "variable1":"Sent",
-        "variable2":"Rukhma is Girl"
-    }
     #messages.success(request,"Query Sent Successfully")
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')
    # return HttpResponse( "this is homepage" )
 
 
@@ -127,3 +124,8 @@ def signup(request):
 
 def questionaries(request):
     return render(request, 'questionaries.html')
+<<<<<<< HEAD
+=======
+  
+
+>>>>>>> 3eba1bcac7946b1e8b2c390d67a26f79e0ff6e8b
