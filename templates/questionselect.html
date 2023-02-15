@@ -9,90 +9,65 @@
 <hr/>
 <body>
     Had nightmares about the events or thought about the event when you didnot want to?<b>{{option}}</b>
-    <br/>
-    <a href="{% url 'questionaries' %}"> Go to Select more options</a>
+    
 </body>   
 </div>
 <div class="container mb-3">
 <body>
-    Repeated, disturbing memories, thoughts, or images of stressful experience?
+    Repeated, disturbing memories, thoughts, or images of stressful experience?<b>{{option}}</b>
+    
 </body>
 </div>
 <div class="container mb-3">
-    <select class="form-select" aria-label="Default select example">
-      <option disabled="true" selected>Having physical reactions (e.g., heart pounding, trouble breathing , sweating) when something reminded you of a stressful experience?</option>
-      <option value="1">Not at all</option>
-      <option value="2">Moderately</option>
-      <option value="3">Extremely</option>
-    </select>
-<input type="submit" value="click">
+  <body>
+      Having physical reactions (e.g., heart pounding, trouble breathing , sweating) when something reminded you of a stressful experience?<b>{{option}}</b>
+    
+  </body>
   </div>
   <div class="container mb-3">
-    <select class="form-select" aria-label="Default select example">
-      <option disabled="true" selected>Felt numb or detached from people, activities, or your surroundings?</option>
-      <option value="1">Not at all</option>
-      <option value="2">Moderately</option>
-      <option value="3">Extremely</option>
-    </select>
-  <input type="submit" value="click">
+    <body>
+      Felt numb or detached from people, activities, or your surroundings?<b>{{option}}</b>
+   
+    </body>
   </div>
   <div class="container mb-3">
-    <select class="form-select" aria-label="Default select example">
-      <option disabled="true" selected>Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?</option>
-      <option value="1">Not at all</option>
-      <option value="2">Moderately</option>
-      <option value="3">Extremely</option>
-    </select>
-  <input type="submit" value="click">
-
+    <body>
+      Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?<b>{{option}}</b>
+    
+    </body>
   </div>
   <div class="container mb-3">
-    <select class="form-select" aria-label="Default select example">
-      <option disabled="true" selected>Having strong negative feelings such as fear, horror, anger, guilt, or shame?</option>
-      <option value="1">Not at all</option>
-      <option value="2">Moderately</option>
-      <option value="3">Extremely</option>
-    </select>
-    <input type="submit" value="click">
+    <body>
+      Having strong negative feelings such as fear, horror, anger, guilt, or shame?<b>{{option}}</b>
+     
+    </body>
   </div>
   <div class="container mb-3">
-    <select class="form-select" aria-label="Default select example">
-      <option disabled="true" selected>Loss of interest in activities that you used to enjoy?</option>
-      <option value="1">Not at all</option>
-      <option value="2">Moderately</option>
-      <option value="3">Extremely</option>
-    </select>
-    <input type="submit" value="click">
+    <body>
+      Loss of interest in activities that you used to enjoy?<b>{{option}}</b>
+    
+    </body>
   </div>
   <div class="container mb-3">
-    <select class="form-select" aria-label="Default select example">
-      <option disabled="true" selected>Trouble experiencing positive feelings (for example, being unable to have loving feelings for those close to you)?</option>
-      <option value="1">Not at all</option>
-      <option value="2">Moderately</option>
-      <option value="3">Extremely</option>
-    </select>
-    <input type="submit" value="click">
+    <body>
+      Trouble experiencing positive feelings (for example, being unable to have loving feelings for those close to you)?<b>{{option}}</b>
+   
+    </body>
   </div>
   <div class="container mb-3">
-    <select class="form-select" aria-label="Default select example">
-      <option disabled="true" selected>Feeling angry, irritable or having aggressive outbursts?</option>
-      <option value="1">Not at all</option>
-      <option value="2">Moderately</option>
-      <option value="3">Extremely</option>
-    </select>
-    <input type="submit" value="click">
+    <body>
+      Feeling angry, irritable or having aggressive outbursts?<b>{{option}}</b>
+    </body>
   </div>
   <div class="container mb-3">
-    <select class="form-select" aria-label="Default select example">
-      <option  disabled="true" selected>Taking too many risks or doing things that could cause you harm?</option>
-      <option value="1">Not at all</option>
-      <option value="2">Moderately</option>
-      <option value="3">Extremely</option>
-    </select>
-    <input type="submit" value="click">
+    <body>
+      Taking too many risks or doing things that could cause you harm?<b>{{option}}</b>
+    </body>
   </div>
   <div class="d-md-flex justify-content-md-center">
     <button class="btn btn-primary" type="submit" style="height:50px;width:200px">Submit</button>
+    <br/>
+      <a href="{% url 'questionaries' %}"> Go to Select more options</a>
   </div>
 </div>
 {% endblock body %}
