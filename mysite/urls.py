@@ -26,5 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
     path('/patient',views.patient, name= 'patient'),
-    path('login/',views.LoginPage, name= 'login')
+    path('/patient/login/',views.LoginPage, name= 'login'),
+    path('/doctor',views.doctor, name= 'doctor' ),
+    path('/doctor/login/', views.Logindoctor, name= 'logindoctor')
     ]
