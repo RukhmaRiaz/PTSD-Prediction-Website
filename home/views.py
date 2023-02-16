@@ -13,6 +13,35 @@ from home.models import Signup
 from home.models import Login
 from home.models import Questionaries
 
+
+def SignupPage(request):
+    if request.method=='POST':
+        uname=request.POST.get('username')
+        email=request.POST.get('email')
+        pass1=request.POST.get('password1')
+        pass2=request.POST.get('password2')
+        if pass1!=pass2:
+            return HttpResponse("Your password and confirm password doesn't match!")
+        else:
+            my_user=User.objects.create_user(uname,email,pass1)
+            my_user.save()
+            return redirect('login')
+    return render (request, 'signupl.html')
+
+
+def LoginPage(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        pass1=request.POST.get('pass')
+        user=authenticate(request,username=username,password=pass1)
+        if user is not None:
+            login(request,user)
+            return render(request, 'index.html')
+        else:
+            return HttpResponse("Username or Password is incorrect!")
+
+    return render (request,'login.html')
+
 # Create your views here.
 def index(request):
     #messages.success(request,"Query Sent Successfully")
@@ -41,68 +70,16 @@ def contact(request):
     return render(request, 'contact.html')
     #return HttpResponse( "this is contact page" )
 
-def patient(request):
-    if request.method=='POST':
-        uname=request.POST.get('username')
-        email=request.POST.get('email')
-        pass1=request.POST.get('password1')
-        pass2=request.POST.get('password2')
-
-        if pass1!=pass2:
-            return HttpResponse("Your password and confirm password doesn't match!")
-        else:
-            my_user=User.objects.create_user(uname,email,pass1)
-            my_user.save()
-            return redirect('login')
-        
-          
+def patient(request):          
     return render (request,'patient.html')
     #return HttpResponse( "this is patient page" )
 
-def LoginPage(request):
-    if request.method=='POST':
-        username=request.POST.get('username')
-        pass1=request.POST.get('pass')
-        user=authenticate(request,username=username,password=pass1)
-        if user is not None:
-            login(request,user)
-            return HttpResponse( "this is login page" )
-        else:
-            return HttpResponse("Username or Password is incorrect!")
-
-    return render (request,'login.html')
 
 
 def doctor(request):
-    if request.method=='POST':
-        uname=request.POST.get('username')
-        email=request.POST.get('email')
-        pass1=request.POST.get('password1')
-        pass2=request.POST.get('password2')
-
-        if pass1!=pass2:
-            return HttpResponse("Your password and confirm password doesn't match!")
-        else:
-            my_user=User.objects.create_user(uname,email,pass1)
-            my_user.save()
-            return redirect('login')
-        
           
-    return render (request,'patient.html')
-    #return HttpResponse( "this is patient page" )
-
-def Logindoctor(request):
-    if request.method=='POST':
-        username=request.POST.get('username')
-        pass1=request.POST.get('pass')
-        user=authenticate(request,username=username,password=pass1)
-        if user is not None:
-            login(request,user)
-            return HttpResponse( "this is login page" )
-        else:
-            return HttpResponse("Username or Password is incorrect!")
-
-    return render (request,'logindoctor.html')
+    return render (request,'doctor.html')
+    #return HttpResponse( "this is doctor page" )
 
 def admin(request):
     return render(request, 'admin.html')
