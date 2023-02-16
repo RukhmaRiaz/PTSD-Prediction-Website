@@ -1,3 +1,4 @@
+from urllib import response
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Contact
@@ -125,4 +126,8 @@ def receptionist(request):
 
 
 def questionaries(request):
-    render(request, 'questionaries.html')
+    return render(request, 'questionaries.html')
+
+def questionselect(request):
+    results=request.GET['option']
+    return render(request, 'questionselect.html',{'option':results})

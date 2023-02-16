@@ -7,23 +7,16 @@
     <h1 class="my-4 text-center"> PTSD Prediction Questionaries</h1>
 <div class="container mb-3">
 <hr/>
-<form action="{% url 'questionselect' %}">
-<select class="form-select" aria-label="Default select example" name="option">
-    <option disabled="true" selected>Had nightmares about the events or thought about the event when you didnot want to?</option>
-    <option value="1">Not at all</option>
-    <option value="2">Moderately</option>
-    <option value="3">Extremely</option>
-  </select>
-  <input type="submit" value="click">
+<body>
+    Had nightmares about the events or thought about the event when you didnot want to?<b>{{option}}</b>
+    <br/>
+    <a href="{% url 'questionaries' %}"> Go to Select more options</a>
+</body>   
 </div>
 <div class="container mb-3">
-  <select class="form-select" aria-label="Default select example">
-    <option disabled="true" selected>Repeated, disturbing memories, thoughts, or images of stressful experience?</option>
-    <option value="1">Not at all</option>
-    <option value="2">Moderately</option>
-    <option value="3">Extremely</option>
-  </select>
-<input type="submit" value="click">
+<body>
+    Repeated, disturbing memories, thoughts, or images of stressful experience?
+</body>
 </div>
 <div class="container mb-3">
     <select class="form-select" aria-label="Default select example">
@@ -102,5 +95,4 @@
     <button class="btn btn-primary" type="submit" style="height:50px;width:200px">Submit</button>
   </div>
 </div>
-</form>
 {% endblock body %}
