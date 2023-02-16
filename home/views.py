@@ -78,3 +78,6 @@ def questionaries(request):
 def questionselect(request):
     results=request.GET['option']
     return render(request, 'questionselect.html',{'option':results})
+
+def results(request):
+    return render(request, 'results.html')
