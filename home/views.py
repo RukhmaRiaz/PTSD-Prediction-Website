@@ -3,44 +3,14 @@ from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Contact
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from django.contrib.auth import logout, login
 from home.models import Receptionist
 from home.models import Patient
 from home.models import Doctor
-from home.models import Signup
-from home.models import Login
 from home.models import Questionaries
 
 
-def SignupPage(request):
-    if request.method=='POST':
-        uname=request.POST.get('username')
-        email=request.POST.get('email')
-        pass1=request.POST.get('password1')
-        pass2=request.POST.get('password2')
-        if pass1!=pass2:
-            return HttpResponse("Your password and confirm password doesn't match!")
-        else:
-            my_user=User.objects.create_user(uname,email,pass1)
-            my_user.save()
-            return redirect('login')
-    return render (request, 'signupl.html')
 
-
-def LoginPage(request):
-    if request.method=='POST':
-        username=request.POST.get('username')
-        pass1=request.POST.get('pass')
-        user=authenticate(request,username=username,password=pass1)
-        if user is not None:
-            login(request,user)
-            return render(request, 'index.html')
-        else:
-            return HttpResponse("Username or Password is incorrect!")
-
-    return render (request,'login.html')
 
 # Create your views here.
 def index(request):
