@@ -80,4 +80,7 @@ def questionselect(request):
     return render(request, 'questionselect.html',{'option':results})
 
 def results(request):
-    return render(request, 'results.html')
+    option=[]
+    if request.method == 'POST':
+        option = request.POST.getlist('option')
+    return render(request, 'results.html',{'option':option})
