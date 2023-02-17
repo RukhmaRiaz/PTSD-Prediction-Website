@@ -8,6 +8,7 @@ from home.models import Receptionist
 from home.models import Patient
 from home.models import Doctor
 from home.models import Questionaries
+from home.models import  Feedback
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -114,3 +115,14 @@ def results(request):
     if request.method == 'POST':
         option = request.POST.getlist('option')
     return render(request, 'results.html',{'option':option})
+
+def feedback(request):
+    if request.method=="POST":
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        phone=request.POST.get('phone')
+        query=request.POST.get('query')
+        contact=Contact(name=name,email=email,phone=phone,query=query,date=datetime.today())
+        contact.save()
+        messages.success(request, 'Your Query has been Sent Successfully!')
+    return render(request,'feedback.html')

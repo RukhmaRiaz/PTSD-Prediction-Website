@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{%block title%} Questionaries {% endblock title%}
+
+{% block body %}
+<div class="container mb-3 ">
+    <h1 class="my-4 text-center"> PTSD Prediction Questionaries</h1>
+<form action="{% url 'results' %}">
+
+<div class="container mb-3">
+<hr/>
+<body>
+    Had nightmares about the events or thought about the event when you didnot want to?<b>{{option}}</b>
+    
+</body>   
+</div>
+<div class="container mb-3">
+<body>
+    Repeated, disturbing memories, thoughts, or images of stressful experience?<b>{{option}}</b>
+    
+</body>
+</div>
+<div class="container mb-3">
+  <body>
+      Having physical reactions (e.g., heart pounding, trouble breathing , sweating) when something reminded you of a stressful experience?<b>{{option}}</b>
+    
+  </body>
+  </div>
+  <div class="container mb-3">
+    <body>
+      Felt numb or detached from people, activities, or your surroundings?<b>{{option}}</b>
+   
+    </body>
+  </div>
+  <div class="container mb-3">
+    <body>
+      Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?<b>{{option}}</b>
+    
+    </body>
+  </div>
+  <div class="container mb-3">
+    <body>
+      Having strong negative feelings such as fear, horror, anger, guilt, or shame?<b>{{option}}</b>
+     
+    </body>
+  </div>
+  <div class="container mb-3">
+    <body>
+      Loss of interest in activities that you used to enjoy?<b>{{option}}</b>
+    
+    </body>
+  </div>
+  <div class="container mb-3">
+    <body>
+      Trouble experiencing positive feelings (for example, being unable to have loving feelings for those close to you)?<b>{{option}}</b>
+   
+    </body>
+  </div>
+  <div class="container mb-3">
+    <body>
+      Feeling angry, irritable or having aggressive outbursts?<b>{{option}}</b>
+    </body>
+  </div>
+  <div class="container mb-3">
+    <body>
+      Taking too many risks or doing things that could cause you harm?<b>{{option}}</b>
+    </body>
+  </div>
+  <div class="d-md-flex justify-content-md-right">
+    <button class="btn btn-primary" type="submit" style="height:50px;width:100px" >Result</button>
+</div>
+</form>
+
+
+{% endblock body %}

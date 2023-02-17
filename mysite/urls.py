@@ -37,4 +37,6 @@ urlpatterns = [
     path('questionaries/', views.questionaries, name='questionaries'),
     path('questionselect/', views.questionselect, name='questionselect'),
     path('results/', views.results, name='results'),
+    path('feedback/', views.feedback, name='feedback'),
+
     ]

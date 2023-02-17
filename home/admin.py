@@ -5,6 +5,8 @@ from home.models import Patient
 from home.models import Doctor
 from home.models import Questionaries
 from home.models import Result
+from home.models import Feedback
+
 
 # Register your models here.
 admin.site.register(Contact)
@@ -13,3 +15,4 @@ admin.site.register(Patient)
 admin.site.register(Doctor)
 admin.site.register(Questionaries)
 admin.site.register(Result)
+admin.site.register(Feedback)
