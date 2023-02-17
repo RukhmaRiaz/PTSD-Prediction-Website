@@ -24,7 +24,17 @@ admin.site.index_title = "Welcome to our PTSD Detection System "
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('',include('home.urls')),
-
-
+    path('',views.SignupPage, name='signup'),
+    path('login/',views.LoginPage, name='login'),
+    #path ('',include('home.urls')),
+    path('home/',views.home, name='home'),
+    path('logout/', views.LogoutPage, name='logout'),
+    path('contact/', views.contact, name='contact'),
+    path('patient/', views.patient, name='patient'),
+    path('doctor/', views.doctor, name='doctor'),
+    path('receptionist/', views.receptionist, name='receptionist'),
+    path('about/', views.about, name='about'),
+    path('questionaries/', views.questionaries, name='questionaries'),
+    path('questionselect/', views.questionselect, name='questionselect'),
+    path('results/', views.results, name='results'),
     ]
