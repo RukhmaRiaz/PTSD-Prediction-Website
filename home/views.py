@@ -108,3 +108,9 @@ def questionselect(request):
 def LogoutPage(request):
     logout(request)
     return redirect('login')
+
+def results(request):
+    option=[]
+    if request.method == 'POST':
+        option = request.POST.getlist('option')
+    return render(request, 'results.html',{'option':option})

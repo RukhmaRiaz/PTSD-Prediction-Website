@@ -14,5 +14,7 @@ urlpatterns = [
     path("admin",views.admin,name='admin'),
     path("questionaries",views.questionaries,name='questionaries'),
     path('questionselect',views.questionselect,name='questionselect'),
+    path('results',views.results,name='results'),
+
 
 ]
